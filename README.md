@@ -20,7 +20,7 @@
    - STAR 프로젝트에서 진행한 학급 규모에 따른 학생들의 시험 성적이 영향을 주는지에 대해 
      예측.
    - R을 사용하여 Multiple regression analysis을 통하여 모델링 후 영향이 있는지 탐색.
-    
+    [논문 바로가기](https://github.com/leezeevin/Lee_Sang_Hoon/blob/main/%ED%9A%8C%EA%B7%80%EB%B6%84%EC%84%9D%20final%20%EB%85%BC%EB%AC%B8%20(%EC%88%98%EB%A6%AC%EB%B9%85%EB%8D%B0%EC%9D%B4%ED%84%B0%ED%95%99%EA%B3%BC%2020200816%20%EC%9D%B4%EC%83%81%ED%9B%88).hwp)
 2. 제2회 학교안전사고 데이터분석∙활용경진대회 (2024)
    - 학생 연령에 따른 학교 안전사고에 대한 분석.
    - 지역, 설립유형, 성별 등과 학생 연령 간의 상관분석.
