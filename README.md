@@ -38,8 +38,8 @@
    - 성별, 나이, 채소 섭취 빈도 등을 이용해 비만도 예측.
    - Python을 사용.
    - Ensemble Analysis 중 RandomForest, GradientBoosting, Stacking을 사용하여 모델링.
-   - Statistical analysis 중 Support Vector Machine을 사용하여 모델링.
    - [발표자료 바로가기](https://github.com/leezeevin/Lee_Sang_Hoon/blob/main/Big%20Data%20Seminar%20Midterm%20Challenges%203%EC%A1%B0.pptx)
+   - [코드 바로가기](https://github.com/leezeevin/Lee_Sang_Hoon/blob/main/lastfinal.py)
 
 #Certificate
 1. AdsP 취득 (2023)
