@@ -31,7 +31,7 @@
    - Smiles에서 추출할 수 있는 여러 데이터들을 활용해 IC50 활성 예측 모델 개발.
    - Python을 사용.
    - Ensemble Analysis 중 RandomForest, GradientBoosting, Stacking을 사용하여 모델링.
-   - Statistical analysis 중 LogisticRegression을 사용하여 모델링.
+   - [코드 바로가기](https://github.com/leezeevin/Lee_Sang_Hoon/blob/main/%EC%8B%A0%EC%95%BD%EA%B0%9C%EB%B0%9C%EC%BD%94%EB%93%9C.py)
   
 4. 비만도 예측 분류 기계학습 모델 구축.
    - 4학년 학사과정 '빅데이터 세미나' 수업 팀 프로젝트.
