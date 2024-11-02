@@ -39,6 +39,7 @@
    - Python을 사용.
    - Ensemble Analysis 중 RandomForest, GradientBoosting, Stacking을 사용하여 모델링.
    - Statistical analysis 중 Support Vector Machine을 사용하여 모델링.
+   - [발표자료 바로가기](https://github.com/leezeevin/Lee_Sang_Hoon/blob/main/Big%20Data%20Seminar%20Midterm%20Challenges%203%EC%A1%B0.pptx)
 
 #Certificate
 1. AdsP 취득 (2023)
