@@ -20,12 +20,12 @@
    - STAR 프로젝트에서 진행한 학급 규모에 따른 학생들의 시험 성적이 영향을 주는지에 대해 
      예측.
    - R을 사용하여 Multiple regression analysis을 통하여 모델링 후 영향이 있는지 탐색.
-    [논문 바로가기](https://github.com/leezeevin/Lee_Sang_Hoon/blob/main/%ED%9A%8C%EA%B7%80%EB%B6%84%EC%84%9D%20final%20%EB%85%BC%EB%AC%B8%20(%EC%88%98%EB%A6%AC%EB%B9%85%EB%8D%B0%EC%9D%B4%ED%84%B0%ED%95%99%EA%B3%BC%2020200816%20%EC%9D%B4%EC%83%81%ED%9B%88).hwp)
+   -  [논문 바로가기](https://github.com/leezeevin/Lee_Sang_Hoon/blob/main/%ED%9A%8C%EA%B7%80%EB%B6%84%EC%84%9D%20final%20%EB%85%BC%EB%AC%B8%20(%EC%88%98%EB%A6%AC%EB%B9%85%EB%8D%B0%EC%9D%B4%ED%84%B0%ED%95%99%EA%B3%BC%2020200816%20%EC%9D%B4%EC%83%81%ED%9B%88).hwp)
 2. 제2회 학교안전사고 데이터분석∙활용경진대회 (2024)
    - 학생 연령에 따른 학교 안전사고에 대한 분석.
    - 지역, 설립유형, 성별 등과 학생 연령 간의 상관분석.
    - Python을 사용하여 Seaborn의 barplot과 heatmap을 이용하여 변수 간 상관에 대해 시각화.
-
+   - [발표자료 바로가기](https://github.com/leezeevin/Lee_Sang_Hoon/blob/main/2024%20%EC%A0%9C2%ED%9A%8C%20%ED%95%99%EA%B5%90%EC%95%88%EC%A0%84%EC%82%AC%EA%B3%A0%20%EB%8D%B0%EC%9D%B4%ED%84%B0%20%EB%B6%84%EC%84%9D%20%EA%B2%BD%EC%A7%84%EB%8C%80%ED%9A%8C.pdf)
 3. 제2회 AI 신약개발 경진대회 (2024)
    - Smiles 분자구조 데이터를 활용하여 IC50 활성 예측 모델을 개발.
    - Smiles에서 추출할 수 있는 여러 데이터들을 활용해 IC50 활성 예측 모델 개발.
