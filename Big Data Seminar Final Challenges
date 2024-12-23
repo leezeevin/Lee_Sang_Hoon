@@ -1,0 +1,121 @@
+import pandas as pd
+import numpy as np
+from sklearn.impute import KNNImputer
+from sklearn.model_selection import train_test_split, StratifiedKFold, cross_val_score
+from sklearn.metrics import classification_report
+import matplotlib.pyplot as plt
+from skopt import BayesSearchCV
+from skopt.space import Integer, Real, Categorical
+import lightgbm as lgb
+
+# 데이터 로드
+df = pd.read_excel('train_2nd.xlsx')
+
+# 범주형 변수 처리 (One-Hot Encoding)
+df_encoded = pd.get_dummies(df, columns=['성별', '결혼여부'], dtype=int)
+
+# KNNImputer 초기화
+imputer = KNNImputer(n_neighbors=5)
+
+# 결측치 채우기
+df_imputed = pd.DataFrame(imputer.fit_transform(df_encoded), columns=df_encoded.columns)
+
+# 원래 데이터 형식으로 복구 (필요한 경우)
+df['재계약횟수'] = df_imputed['재계약횟수']
+
+# 독립 변수와 종속 변수 분리
+y = df['계약구분']
+X = df.drop(['계약구분', '계약서고유번호', '호실고유번호', '계약자고유번호', '아파트_이름'], axis=1)
+
+# 카테고리형 변수 One-Hot Encoding
+X = pd.get_dummies(X, columns=['성별', '결혼여부'], dtype='int')
+
+# LightGBM 모델 정의
+lgbm = lgb.LGBMClassifier(random_state=42)
+
+# 하이퍼파라미터 탐색 공간 정의
+search_space = {
+    'n_estimators': Integer(50, 300),                 # 부스팅 라운드
+    'max_depth': Integer(-1, 20),                     # 최대 깊이 (-1은 제한 없음)
+    'num_leaves': Integer(15, 50),                   # 리프 노드 개수
+    'learning_rate': Real(0.01, 0.3, 'log-uniform'), # 학습률
+    'min_child_samples': Integer(10, 50),            # 최소 데이터 수 (리프 노드)
+    'subsample': Real(0.6, 1.0),                     # 데이터 샘플링 비율
+    'colsample_bytree': Real(0.6, 1.0),              # 열 샘플링 비율
+    'reg_alpha': Real(0.0, 1.0),                     # L1 정규화
+    'reg_lambda': Real(0.0, 1.0),                    # L2 정규화
+}
+
+# StratifiedKFold로 클래스 비율 유지
+cv_strategy = StratifiedKFold(n_splits=10, shuffle=True, random_state=42)
+
+# 베이지안 최적화 설정
+bayes_search = BayesSearchCV(
+    estimator=lgbm,
+    search_spaces=search_space,
+    n_iter=50,  # 총 탐색 횟수
+    cv=cv_strategy,  # 교차 검증 폴드 수
+    scoring='f1_macro',  # 평가 기준 (F1 매크로)
+    n_jobs=-1,  # 병렬 처리
+    verbose=2,
+    random_state=42
+)
+
+# 베이지안 최적화 수행
+bayes_search.fit(X, y)
+
+# 최적의 하이퍼파라미터 출력
+print("Best Parameters:", bayes_search.best_params_)
+print("Best Score:", bayes_search.best_score_)
+
+best_lgbm = bayes_search.best_estimator_
+
+# 특성 중요도 확인
+importances = best_lgbm.feature_importances_
+
+# 다양한 threshold에서 변수 선택
+thresholds = [0.001, 0.005, 0.01, 0.02, 0.05]  # 임계값 리스트
+results = []
+
+for threshold in thresholds:
+    # 임계값에 따른 특성 선택
+    selected_features = [col for col, imp in zip(X.columns, importances) if imp > threshold]
+
+    if not selected_features:
+        print(f"Threshold {threshold}: No features selected.")
+        continue
+
+    # 선택된 특성으로 데이터 축소
+    X_selected = X[selected_features]
+
+    # 축소된 데이터로 성능 평가
+    f1_scores = cross_val_score(
+        best_lgbm,  # 최적 모델 사용
+        X_selected, y, cv=cv_strategy, scoring='f1_macro', n_jobs=-1
+    )
+    mean_f1 = np.mean(f1_scores)
+    results.append((threshold, len(selected_features), mean_f1))
+    print(f"Threshold {threshold}: {len(selected_features)} features, F1 Macro: {mean_f1:.4f}")
+
+# 결과를 데이터프레임으로 정리
+results_df = pd.DataFrame(results, columns=["Threshold", "Num_Features", "F1_Macro"])
+
+# Threshold와 F1 점수 시각화
+plt.plot(results_df["Threshold"], results_df["F1_Macro"], marker='o')
+plt.xlabel("Threshold")
+plt.ylabel("F1 Macro Score")
+plt.title("Threshold vs F1 Macro")
+plt.grid()
+plt.show()
+
+print("Feature Selection Results:")
+print(results_df)
+
+# 특성 중요도 확인 후, 기존 모델이 성능이 가장 좋음으로 기존 모델로 예측
+
+test = pd.read_excel('test_2nd.xlsx')
+test = test.drop(['계약서고유번호','호실고유번호','계약자고유번호', '아파트_이름'], axis=1)
+test = pd.get_dummies(test , columns=[ '성별','결혼여부'], dtype = 'int')
+test_pred = best_lgbm.predict(test)
+test_pred = pd.DataFrame(test_pred, columns =['계약구분'])
+test_pred.to_excel('predict.xlsx', index=False)
