@@ -48,7 +48,8 @@
    - 재계약횟수, 거주개월, 아파트 평점, 층, 월세, 보증금 등을 이용해 재계약여부 예측.
    - python을 사용.
    - Ensemble Analysis 중 GradientBoosting 기반의 lightgbm을 사용하여 모델링.
-   - 
+   - [코드 바로가기](https://github.com/leezeevin/Lee_Sang_Hoon/blob/main/Big%20Data%20Seminar%20Final%20Challenges)
+     
 #Certificate
 1. AdsP 취득 (2023)
 2. Adp 필기 취득 (2024)
