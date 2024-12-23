@@ -35,12 +35,20 @@
   
 4. 비만도 예측 분류 기계학습 모델 구축.
    - 4학년 학사과정 '빅데이터 세미나' 수업 팀 프로젝트.
+   - 팀 프로젝트 1등 
    - 성별, 나이, 채소 섭취 빈도 등을 이용해 비만도 예측.
    - Python을 사용.
    - Ensemble Analysis 중 RandomForest, GradientBoosting, Stacking을 사용하여 모델링.
    - [발표자료 바로가기](https://github.com/leezeevin/Lee_Sang_Hoon/blob/main/Big%20Data%20Seminar%20Midterm%20Challenges%203%EC%A1%B0.pptx)
    - [코드 바로가기](https://github.com/leezeevin/Lee_Sang_Hoon/blob/main/lastfinal.py)
 
+5. 도시공사 영구임대아파트 입주자 퇴거 여부 데이터를 이용한 재계약여부 예측모델 구축.
+   - 4학년 학사과정 '빅데이터 세미나' 수업 개인전 프로젝트.
+   - 개인전 프로젝트 1등.
+   - 재계약횟수, 거주개월, 아파트 평점, 층, 월세, 보증금 등을 이용해 재계약여부 예측.
+   - python을 사용.
+   - Ensemble Analysis 중 GradientBoosting 기반의 lightgbm을 사용하여 모델링.
+   - 
 #Certificate
 1. AdsP 취득 (2023)
 2. Adp 필기 취득 (2024)
