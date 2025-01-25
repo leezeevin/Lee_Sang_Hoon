@@ -5,7 +5,8 @@
 
 #Activity
 1. 대한민국 육군 병장 만기전역 (2020 ~ 2022)
-2. 금오공과대학교 수리빅데이터학과 부학생회장 (2024)
+2. 국립금오공과대학교 제 3대 수리빅데이터학과 바램 학생회 부학생회장 (2024)
+3. 국립금오공과대학교 제 28대 바로 감사위원회 감사국장 (2025)
 
 #Contact
 - E_mail : sanghoon0408@naver.com
@@ -27,13 +28,14 @@
    - Python을 사용하여 Seaborn의 barplot과 heatmap을 이용하여 변수 간 상관에 대해 시각화.
    - [발표자료 바로가기](https://github.com/leezeevin/Lee_Sang_Hoon/blob/main/2024%20%EC%A0%9C2%ED%9A%8C%20%ED%95%99%EA%B5%90%EC%95%88%EC%A0%84%EC%82%AC%EA%B3%A0%20%EB%8D%B0%EC%9D%B4%ED%84%B0%20%EB%B6%84%EC%84%9D%20%EA%B2%BD%EC%A7%84%EB%8C%80%ED%9A%8C.pdf)
 3. 제2회 AI 신약개발 경진대회 (2024)
+   - 리더보드 상위 45%
    - Smiles 분자구조 데이터를 활용하여 IC50 활성 예측 모델을 개발.
    - Smiles에서 추출할 수 있는 여러 데이터들을 활용해 IC50 활성 예측 모델 개발.
    - Python을 사용.
    - Ensemble Analysis 중 RandomForest, GradientBoosting, Stacking을 사용하여 모델링.
    - [코드 바로가기](https://github.com/leezeevin/Lee_Sang_Hoon/blob/main/%EC%8B%A0%EC%95%BD%EA%B0%9C%EB%B0%9C%EC%BD%94%EB%93%9C.py)
   
-4. 비만도 예측 분류 기계학습 모델 구축.
+5. 비만도 예측 분류 기계학습 모델 구축.
    - 4학년 학사과정 '빅데이터 세미나' 수업 팀 프로젝트.
    - 팀 프로젝트 1등 
    - 성별, 나이, 채소 섭취 빈도 등을 이용해 비만도 예측.
@@ -42,13 +44,19 @@
    - [발표자료 바로가기](https://github.com/leezeevin/Lee_Sang_Hoon/blob/main/Big%20Data%20Seminar%20Midterm%20Challenges%203%EC%A1%B0.pptx)
    - [코드 바로가기](https://github.com/leezeevin/Lee_Sang_Hoon/blob/main/lastfinal.py)
 
-5. 도시공사 영구임대아파트 입주자 퇴거 여부 데이터를 이용한 재계약여부 예측모델 구축.
+6. 도시공사 영구임대아파트 입주자 퇴거 여부 데이터를 이용한 재계약여부 예측모델 구축.
    - 4학년 학사과정 '빅데이터 세미나' 수업 개인전 프로젝트.
-   - 개인전 프로젝트 1등.
+   - 개인전 프로젝트 1등
    - 재계약횟수, 거주개월, 아파트 평점, 층, 월세, 보증금 등을 이용해 재계약여부 예측.
    - python을 사용.
    - Ensemble Analysis 중 GradientBoosting 기반의 lightgbm을 사용하여 모델링.
    - [코드 바로가기](https://github.com/leezeevin/Lee_Sang_Hoon/blob/main/Big%20Data%20Seminar%20Final%20Challenges)
+
+7. 전기차 가격 예측 해커톤 (2025)
+   - 리더보드 상위 2%
+   - 제조사, 모델명, 차량상태, 배터리용량 등을 이용해 전기차 가격 금액 예측.
+   - python을 사용.
+   - Ensemble Analysis 중 GradientBoosting 기반의 xgboost를 사용하여 모델링.
      
 #Certificate
 1. AdsP 취득 (2023)
