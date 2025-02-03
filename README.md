@@ -62,6 +62,7 @@
    - python을 사용.
    - Ensemble Analysis 중 GradientBoosting 기반의 xgboost를 사용하여 모델링.
    - [코드 바로가기](https://github.com/leezeevin/Lee_Sang_Hoon/blob/main/%EC%A0%84%EA%B8%B0%EC%B0%A8%20%EA%B0%80%EA%B2%A9%20%EC%98%88%EC%B8%A1.py)
+   - [EDA 자료 바로가기](https://colab.research.google.com/drive/1fQ4AaF0yz90jNWwF23v2WlOnqH0wfTpo?authuser=1#scrollTo=Zyi4mDKuVkD-)
      
 #Certificate
 1. AdsP 취득 (2023)
