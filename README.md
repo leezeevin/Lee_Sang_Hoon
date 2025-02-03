@@ -32,7 +32,7 @@
    - Python을 사용하여 Seaborn의 barplot과 heatmap을 이용하여 변수 간 상관에 대해 시각화.
    - [발표자료 바로가기](https://github.com/leezeevin/Lee_Sang_Hoon/blob/main/2024%20%EC%A0%9C2%ED%9A%8C%20%ED%95%99%EA%B5%90%EC%95%88%EC%A0%84%EC%82%AC%EA%B3%A0%20%EB%8D%B0%EC%9D%B4%ED%84%B0%20%EB%B6%84%EC%84%9D%20%EA%B2%BD%EC%A7%84%EB%8C%80%ED%9A%8C.pdf)
 3. 제2회 AI 신약개발 경진대회 (2024)
-   - 리더보드 상위 45%
+   - public 45% / private 45%
    - Smiles 분자구조 데이터를 활용하여 IC50 활성 예측 모델을 개발.
    - Smiles에서 추출할 수 있는 여러 데이터들을 활용해 IC50 활성 예측 모델 개발.
    - Python을 사용.
@@ -57,7 +57,7 @@
    - [코드 바로가기](https://github.com/leezeevin/Lee_Sang_Hoon/blob/main/Big%20Data%20Seminar%20Final%20Challenges)
 
 7. 전기차 가격 예측 해커톤 (2025)
-   - 리더보드 상위 2%
+   - public 2% / private 44%
    - 제조사, 모델명, 차량상태, 배터리용량 등을 이용해 전기차 가격 금액 예측.
    - python을 사용.
    - Ensemble Analysis 중 GradientBoosting 기반의 xgboost를 사용하여 모델링.
