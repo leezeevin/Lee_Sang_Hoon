@@ -20,7 +20,7 @@
 2. R
 
 #project
-1. 다중 회귀 분석을 통한 학급 규모에 따른 시험 성적에 대한 연구 논문
+1. 다중 회귀 분석을 통한 학급 규모에 따른 시험 성적에 대한 연구 논문 (2024)
    - 3학년 학사과정 '회귀분석' 수업 간의 논문 작성.
    - STAR 프로젝트에서 진행한 학급 규모에 따른 학생들의 시험 성적이 영향을 주는지에 대해 
      예측.
@@ -39,7 +39,7 @@
    - Ensemble Analysis 중 RandomForest, GradientBoosting, Stacking을 사용하여 모델링.
    - [코드 바로가기](https://github.com/leezeevin/Lee_Sang_Hoon/blob/main/%EC%8B%A0%EC%95%BD%EA%B0%9C%EB%B0%9C%EC%BD%94%EB%93%9C.py)
   
-5. 비만도 예측 분류 기계학습 모델 구축.
+5. 비만도 예측 분류 기계학습 모델 구축 (2024)
    - 4학년 학사과정 '빅데이터 세미나' 수업 팀 프로젝트.
    - 팀 프로젝트 1등 
    - 성별, 나이, 채소 섭취 빈도 등을 이용해 비만도 예측.
@@ -48,7 +48,7 @@
    - [발표자료 바로가기](https://github.com/leezeevin/Lee_Sang_Hoon/blob/main/Big%20Data%20Seminar%20Midterm%20Challenges%203%EC%A1%B0.pptx)
    - [코드 바로가기](https://github.com/leezeevin/Lee_Sang_Hoon/blob/main/lastfinal.py)
 
-6. 도시공사 영구임대아파트 입주자 퇴거 여부 데이터를 이용한 재계약여부 예측모델 구축.
+6. 도시공사 영구임대아파트 입주자 퇴거 여부 데이터를 이용한 재계약여부 예측모델 구축 (2024)
    - 4학년 학사과정 '빅데이터 세미나' 수업 개인전 프로젝트.
    - 개인전 프로젝트 1등
    - 재계약횟수, 거주개월, 아파트 평점, 층, 월세, 보증금 등을 이용해 재계약여부 예측.
