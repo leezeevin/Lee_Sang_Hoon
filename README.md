@@ -71,6 +71,7 @@
    - Ensemble Analysis 중 GradientBossting 기반의 catboost(IVF) / randomforest(DI)를 사용하여 모델링.
    - [코드 바로가기](https://github.com/leezeevin/Lee_Sang_Hoon/blob/main/LG%20Amiers%20%EB%82%9C%EC%9E%84%20%EA%B4%80%EB%A0%A8%20%EC%BD%94%EB%93%9C.py)
    - [발표자료 바로가기](https://github.com/leezeevin/Lee_Sang_Hoon/blob/main/lgamiers.pptx)
+     
 #Certificate
 1. AdsP 취득 (2023)
 2. Adp 필기 취득 (2024)
