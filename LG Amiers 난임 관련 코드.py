@@ -1,3 +1,6 @@
+!pip install optuna
+!pip install catboost
+import optuna
 import pandas as pd
 import numpy as np
 from catboost import CatBoostClassifier
@@ -109,40 +112,54 @@ X2, y2 = df2.drop(columns=['임신 성공 여부']), df2['임신 성공 여부']
 X_test1 = test1.drop(columns=['임신 성공 여부'], errors='ignore')
 X_test2 = test2.drop(columns=['임신 성공 여부'], errors='ignore')
 
-# IVF 모델 학습 및 예측 (5-Fold 교차 검증)
-skf = StratifiedKFold(n_splits=5, shuffle=True, random_state=42)
-auc_scores = []
-final_preds1 = np.zeros(len(X_test1))
-for train_idx, val_idx in skf.split(X1, y1):
-    X_train, X_val = X1.iloc[train_idx], X1.iloc[val_idx]
-    y_train, y_val = y1.iloc[train_idx], y1.iloc[val_idx]
+# Optuna 하이퍼파라미터 튜닝 함수
+def objective(trial, X, y, n_splits):
+    params = {
+        "iterations": trial.suggest_int("iterations", 800, 1300 ),
+        "depth": trial.suggest_int("depth", 4, 7),
+        "learning_rate": trial.suggest_float("learning_rate", 0.02, 0.1, log=True),
+        "l2_leaf_reg": trial.suggest_float("l2_leaf_reg", 1e-2, 5, log=True),
+        "border_count": trial.suggest_int("border_count", 32, 200),
+    }
+    skf = StratifiedKFold(n_splits=n_splits, shuffle=True, random_state=42)
+    auc_scores = []
+    for train_idx, val_idx in skf.split(X, y):
+        X_train, X_val = X.iloc[train_idx], X.iloc[val_idx]
+        y_train, y_val = y.iloc[train_idx], y.iloc[val_idx]
 
-    model = CatBoostClassifier(iterations=1000, depth=6, learning_rate=0.05, cat_features=categorical_columns, verbose=0)
-    model.fit(X_train, y_train, eval_set=(X_val, y_val), early_stopping_rounds=50, verbose=0)
-    preds = model.predict_proba(X_val)[:, 1]
-    auc = roc_auc_score(y_val, preds)
-    auc_scores.append(auc)
-    final_preds1 += model.predict_proba(X_test1)[:, 1] / skf.n_splits
-print(f'IVF 모델 평균 ROC AUC: {np.mean(auc_scores):.4f}')
+        model = CatBoostClassifier(**params, cat_features=categorical_columns, verbose=0)
+        model.fit(X_train, y_train, eval_set=(X_val, y_val), early_stopping_rounds=50, verbose=0)
+        preds = model.predict_proba(X_val)[:, 1]
+        auc_scores.append(roc_auc_score(y_val, preds))
 
-# 결과 저장
-sample_submission.loc[test1.index, '임신 성공 여부'] = final_preds1
+    return np.mean(auc_scores)
 
-# DI 모델 학습 및 예측 (10-Fold 교차 검증)
-skf = StratifiedKFold(n_splits=10, shuffle=True, random_state=42)
-auc_scores = []
-final_preds2 = np.zeros(len(X_test2))
-for train_idx, val_idx in skf.split(X2, y2):
-    X_train, X_val = X2.iloc[train_idx], X2.iloc[val_idx]
-    y_train, y_val = y2.iloc[train_idx], y2.iloc[val_idx]
+# IVF 튜닝 (n_splits=3)
+study1 = optuna.create_study(direction="maximize")
+study1.optimize(lambda trial: objective(trial, X1, y1, 5), n_trials=10)
+best_params1 = study1.best_params
 
-    model = CatBoostClassifier(iterations=1000, depth=6, learning_rate=0.05, cat_features=categorical_columns, verbose=0)
-    model.fit(X_train, y_train, eval_set=(X_val, y_val), early_stopping_rounds=50, verbose=0)
-    preds = model.predict_proba(X_val)[:, 1]
-    auc = roc_auc_score(y_val, preds)
-    auc_scores.append(auc)
-    final_preds2 += model.predict_proba(X_test2)[:, 1] / skf.n_splits
-print(f'DI 모델 평균 ROC AUC: {np.mean(auc_scores):.4f}')
+# DI 튜닝 (n_splits=5)
+study2 = optuna.create_study(direction="maximize")
+study2.optimize(lambda trial: objective(trial, X2, y2, 10), n_trials=10)
+best_params2 = study2.best_params
+
+# 최적의 파라미터로 모델 학습 및 예측
+def train_and_predict(X, y, X_test, best_params, n_splits):
+    skf = StratifiedKFold(n_splits=n_splits, shuffle=True, random_state=42)
+    final_preds = np.zeros(len(X_test))
+    for train_idx, val_idx in skf.split(X, y):
+        X_train, X_val = X.iloc[train_idx], X.iloc[val_idx]
+        y_train, y_val = y.iloc[train_idx], y.iloc[val_idx]
+
+        model = CatBoostClassifier(**best_params, cat_features=categorical_columns, verbose=0)
+        model.fit(X_train, y_train, eval_set=(X_val, y_val), early_stopping_rounds=30, verbose=0)
+        final_preds += model.predict_proba(X_test)[:, 1] / n_splits
+
+    return final_preds
+
+final_preds1 = train_and_predict(X1, y1, X_test1, best_params1, 3)
+final_preds2 = train_and_predict(X2, y2, X_test2, best_params2, 5)
 
 # 예측값을 원래 index로 복원하여 sample_submission.csv 저장
 test1['probability'] = final_preds1
