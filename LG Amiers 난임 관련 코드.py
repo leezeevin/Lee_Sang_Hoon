@@ -40,6 +40,32 @@ df2 = df[df['시술 유형'] == 'DI']
 test1 = test[test['시술 유형'] == 'IVF']
 test2 = test[test['시술 유형'] == 'DI']
 
+import pandas as pd
+import scipy.stats as stats
+
+# 데이터 복제
+df_d = df.copy()
+
+# 결측치를 -1로 대체할 열 목록
+cols_to_fill = [
+    "임신 시도 또는 마지막 임신 경과 연수", "착상 전 유전 검사 사용 여부", 
+    "PGS 시술여부", "PGD 시술 여부", "난자 해동 경과일", "배아 해동 경과일"
+]
+
+# 결측치 -1로 대체
+df_d[cols_to_fill] = df_d[cols_to_fill].fillna(-1)
+
+# 종속 변수 (임신 성공 여부)가 범주형 변수라고 가정
+dependent_var = "임신 성공 여부"
+
+# 카이제곱 검정 수행
+for col in cols_to_fill:
+    contingency_table = pd.crosstab(df_d[col], df_d[dependent_var])
+    chi2, p, dof, expected = stats.chi2_contingency(contingency_table)
+    
+    print(f"변수: {col}")
+    print(f"카이제곱 통계량: {chi2:.4f}, p-값: {p:.4f}\n")
+
 # 특정 컬럼의 결측치를 -1로 채우기
 fillna_cols = [
     '임신 시도 또는 마지막 임신 경과 연수', '착상 전 유전 검사 사용 여부', 'PGS 시술 여부',
