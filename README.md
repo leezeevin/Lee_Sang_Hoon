@@ -68,7 +68,7 @@
    - 데이콘 리더보드 상위 public 13% / private 13%
    - 시술 유형, 배란 자극 여부, 불임 원인 등을 이용해 임신 성공 여부 예측.
    - python을 사용.
-   - Ensemble Analysis 중 GradientBossting 기반의 catboost(IVF) / randomforest(DI)를 사용하여 모델링.
+   - Ensemble Analysis 중 GradientBossting 기반의 catboost을 사용하여 모델링.
    - [코드 바로가기](https://github.com/leezeevin/Lee_Sang_Hoon/blob/main/LG%20Amiers%20%EB%82%9C%EC%9E%84%20%EA%B4%80%EB%A0%A8%20%EC%BD%94%EB%93%9C.py)
    - [발표자료 바로가기](https://github.com/leezeevin/Lee_Sang_Hoon/blob/main/lgamiers.pptx)
      
