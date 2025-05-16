@@ -73,7 +73,8 @@
    - [발표자료 바로가기](https://github.com/leezeevin/Lee_Sang_Hoon/blob/main/lgamiers.pptx)
      
 #Certificate
-1. AdsP 취득 (2023)
-2. Adp 필기 취득 (2024)
-
+1. 데이터 분석 준전문가 자격증(ADsP) 취득 (2023)
+2. 데이터 분석 전문가 자격증 (ADP) 필기 취득 (2024)
+3. 데이터 분석 전문가 자격증 (ADP) 실기 취득 (2025)
+4. 빅데이터 분석기사 필기 취득 (2025)
 
