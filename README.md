@@ -76,7 +76,7 @@
     - 국가, 분야, 직원 수, 인수여부, 연매출 등을 이용해 기업 성공 확률 예측.
     - python을 사용.
     - Ensemble Analysis 중 Bagging 기반 RandomForestRegressor 을 사용하여 모델링.
-    - 
+    - [발표자료 바로가기](https://github.com/leezeevin/Lee_Sang_Hoon/blob/main/%EA%B8%B0%EC%97%85%EC%84%B1%EA%B3%B5.pptx)
 #Certificate
 1. 데이터 분석 준전문가 자격증(ADsP) 취득 (2023)
 2. 데이터 분석 전문가 자격증 (ADP) 필기 취득 (2024)
