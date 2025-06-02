@@ -79,6 +79,11 @@
     - Ensemble Analysis 중 Bagging 기반 RandomForestRegressor 을 사용하여 모델링.
     - [코드 바로가기](https://github.com/leezeevin/Lee_Sang_Hoon/blob/main/%EA%B8%B0%EC%97%85%EC%84%B1%EA%B3%B5%EC%BD%94%EB%93%9C.py)
     - [발표자료 바로가기](https://github.com/leezeevin/Lee_Sang_Hoon/blob/main/%EA%B8%B0%EC%97%85%EC%84%B1%EA%B3%B5.pptx)
+  
+10. 경상남도 빅데이터 분석 공모전 (2025)
+    - 유입지 지역별 카드매출분석 및 시각화 후 인사이트 도출.
+    - python을 사용.
+    - [발표자료 바로가기]
       
 #Certificate
 1. 데이터 분석 준전문가 자격증(ADsP) 취득 (2023)
