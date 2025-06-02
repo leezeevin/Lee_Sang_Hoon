@@ -83,7 +83,7 @@
 10. 경상남도 빅데이터 분석 공모전 (2025)
     - 유입지 지역별 카드매출분석 및 시각화 후 인사이트 도출.
     - python을 사용.
-    - [발표자료 바로가기]
+    - [발표자료 바로가기](https://github.com/leezeevin/Lee_Sang_Hoon/blob/main/%EA%B2%BD%EB%82%A8%EB%B9%85%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B6%84%EC%84%9D_%EB%B6%84%EC%84%9D%EB%B3%B4%EA%B3%A0%EC%84%9C.pdf)
       
 #Certificate
 1. 데이터 분석 준전문가 자격증(ADsP) 취득 (2023)
