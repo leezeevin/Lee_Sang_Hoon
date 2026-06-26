@@ -95,7 +95,7 @@
    - 종로구 6개 업종별 신한카드 매출 및 한국은행 거시지표 3종(금리, 물가, 심리)사용.
    - 다중공선성 통제 및 소표본 과적합 해결을 위한 베이지안 계층모형(BHM) 구축.
    - [코드 바로가기](https://github.com/leezeevin/Lee_Sang_Hoon/blob/main/personalproject1.py)
-   - 
+   - [발표자료 바로가기](https://github.com/leezeevin/Lee_Sang_Hoon/blob/main/%EA%B1%B0%EC%8B%9C%EA%B2%BD%EC%A0%9C%20%EB%B3%80%EB%8F%99%EC%97%90%20%EB%94%B0%EB%A5%B8%20%EC%83%81%EA%B6%8C%20%EB%B6%84%EC%84%9D.pdf)
 
    
       
