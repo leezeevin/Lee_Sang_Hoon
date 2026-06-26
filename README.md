@@ -94,6 +94,8 @@
    - 기준금리 변동이 자영업자 매출에 미치는 타격 여부 및 리스크 동인 규명
    - 종로구 6개 업종별 신한카드 매출 및 한국은행 거시지표 3종(금리, 물가, 심리)사용.
    - 다중공선성 통제 및 소표본 과적합 해결을 위한 베이지안 계층모형(BHM) 구축.
+   - [코드 바로가기](https://github.com/leezeevin/Lee_Sang_Hoon/blob/main/personalproject1.py)
+   - 
 
    
       
