@@ -86,7 +86,8 @@
     - 유입지 지역별 카드매출분석 및 시각화 후 인사이트 도출.
     - python을 사용.
     - [발표자료 바로가기](https://github.com/leezeevin/Lee_Sang_Hoon/blob/main/%EA%B2%BD%EB%82%A8%EB%B9%85%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B6%84%EC%84%9D_%EB%B6%84%EC%84%9D%EB%B3%B4%EA%B3%A0%EC%84%9C.pdf)
-   
+
+
 #Personal Projects
 11. 거시경제 변동에 따른 오프라인 골목상권 영향도 분석 (2026)
     - 기준금리 변동이 자영업자 매출에 미치는 타격 여부 및 진짜 리스크 동인 규명.
